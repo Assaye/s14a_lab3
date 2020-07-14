@@ -46,7 +46,7 @@ def edit_book(book_id):
 @main.route('/create/book/<pub_id>', methods=['GET', 'POST'])
 def create_book(pub_id):
     form = CreateBookForm()
-    form.pub_id.data = pub_id  # pre-populates pub_id
+    form.pub_id.data = pub_id  
     if form.validate_on_submit():
         book = Book(title=form.title.data, author=form.author.data, avg_rating=form.avg_rating.data,
                     book_format=form.format.data, image=form.img_url.data, num_pages=form.num_pages.data,
