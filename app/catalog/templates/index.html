@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+
+   {% block content %}
+   
+   
+       <div class="container">
+           <h1>Book Catalog</h1>
+           <br>
+       <div class="row">
+       
+        {% for book in books %}
+        <div class="col-4 list"> 
+            <h4> Title: {{ book.title }} </h4>
+            <p> Authors: {{ book.author }} </p>
+            <p> Format: {{ book.format }} </p>
+            <p> Average Rating: {{ book.avg_rating }} </p>
+            <p> Pages: {{ book.num_pages }} </p>
+
+            <span>
+                <a href="{{ url_for('main.create_book', pub_id=book.pub_id) }}">
+                    <button type="submit" class="btn btn-info">Create</button>
+                </a>
+            </span>
+
+            <span>
+                <a href="{{ url_for('main.edit_book', book_id=book.id) }}">
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                </a>
+            </span>
+
+            <span>
+                <a href="{{ url_for('main.delete_book', book_id=book.id) }}">
+                    <button type="submit" class="btn btn-secondary">Delete</button>
+                </a>
+            </span>
+        </div>
+            
+        {% endfor %}
+        
+        </div>
+        </div>
+    {% endblock content %}

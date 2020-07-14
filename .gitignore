@@ -1,0 +1,11 @@
+.sublime-workspace
+.idea
+.DS_store
+.env
+venv/
+
+*.pyc
+__pycache__/
+
+
+
