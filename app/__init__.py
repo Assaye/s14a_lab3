@@ -12,10 +12,10 @@ bootstrap = Bootstrap()
 login_manager = LoginManager()
 bcrypt = Bcrypt()
 
-def create_app(dev):
+def create_app(prod):
     
     app = Flask(__name__)
-    configuration = os.path.join(os.getcwd(), 'config', 'dev' + '.py')
+    configuration = os.path.join(os.getcwd(), 'config', 'prod' + '.py')
     #  python - import os - os.getcwd() - os.path.join(os.getcwd(), 'config', config_type + '.py')
     # 'C:\\Users\\Bulti\\WebDev\\s14a\\lab3_book_store\\config\\dev.py'
     app.config.from_pyfile(configuration)   
